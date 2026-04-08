@@ -21,4 +21,14 @@ public class Field {
 
         return new Field(listStacksCloned);
     }
+
+    public String getPositionString() {
+        StringBuilder sb = new StringBuilder();
+
+        for (Stack stack : listStacks) {
+            sb.append(stack.getPositionString()).append("|");
+        }
+
+        return sb.toString();
+    }
 }

@@ -76,4 +76,14 @@ public class Stack {
     public int size() {
         return listElements.size();
     }
+
+    public String getPositionString() {
+        StringBuilder sb = new StringBuilder();
+
+        for (Item item : listElements) {
+            sb.append(item.getProperty()).append(",");
+        }
+
+        return sb.toString();
+    }
 }
