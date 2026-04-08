@@ -9,6 +9,10 @@ public class Stack {
     private final int capacity;
 
     public Stack(int capacity) {
+        this(capacity, List.of());
+    }
+
+    public Stack(int capacity, List<Item> listElements) {
 
         if (capacity <= 0) {
             throw new StackException("The stack capacity must at least be 1");
@@ -16,6 +20,8 @@ public class Stack {
 
         this.listElements = new ArrayList<>();
         this.capacity = capacity;
+
+        this.listElements.addAll(listElements);
     }
 
     public boolean canPush(Item element) {
@@ -53,6 +59,10 @@ public class Stack {
             throw new StackException("The stack is empty");
         }
         return listElements.get(listElements.size() - 1);
+    }
+
+    public Stack cloneStack() {
+        return new Stack(capacity, listElements);
     }
 
     public boolean isEmpty() {
