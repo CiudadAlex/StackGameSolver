@@ -27,6 +27,32 @@ public class Field {
         return new Field(listStacksCloned, listPreviousPositionsCloned);
     }
 
+    public boolean canMove(int idStackSource, int idStackTarget) {
+
+        Stack stackSource = listStacks.get(idStackSource);
+        Stack stackTarget = listStacks.get(idStackTarget);
+
+        if (!stackSource.canPop()) {
+            return false;
+        }
+
+        Item itemSource = stackSource.peek();
+        return stackTarget.canPush(itemSource);
+    }
+
+    public void move(int idStackSource, int idStackTarget) {
+
+        String currentPosition = getPositionString();
+
+        Stack stackSource = listStacks.get(idStackSource);
+        Stack stackTarget = listStacks.get(idStackTarget);
+
+        Item itemSource = stackSource.pop();
+        stackTarget.push(itemSource);
+
+        listPreviousPositions.add(currentPosition);
+    }
+
     public String getPositionString() {
         StringBuilder sb = new StringBuilder();
 

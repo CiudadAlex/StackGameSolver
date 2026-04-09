@@ -38,6 +38,15 @@ public class Stack {
         return element.getProperty() == lastElement.getProperty();
     }
 
+    public boolean canPop() {
+
+        if (isEmpty()) {
+            return false;
+        }
+
+        return true;
+    }
+
     public void push(Item element) {
 
         if (isFull()) {
