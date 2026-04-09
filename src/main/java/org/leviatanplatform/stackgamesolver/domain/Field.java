@@ -53,6 +53,15 @@ public class Field {
         listPreviousPositions.add(currentPosition);
     }
 
+    public boolean isCurrentPositionAlsoInPrevious() {
+        String currentPosition = getPositionString();
+        return listPreviousPositions.contains(currentPosition);
+    }
+
+    public int getNumberOfStacks() {
+        return listStacks.size();
+    }
+
     public String getPositionString() {
         StringBuilder sb = new StringBuilder();
 
