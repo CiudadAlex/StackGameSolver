@@ -70,6 +70,28 @@ public class Stack {
         return listElements.get(listElements.size() - 1);
     }
 
+    public boolean isSolved() {
+        if (isEmpty()) {
+            // Void is solved
+            return true;
+        }
+
+        if (!isFull()) {
+            return false;
+        }
+
+        int propertyValue = listElements.get(0).getProperty();
+
+        for (Item item : listElements) {
+            if (item.getProperty() != propertyValue) {
+                return false;
+            }
+        }
+
+        // All equal is solved
+        return true;
+    }
+
     public Stack cloneStack() {
         return new Stack(capacity, listElements);
     }

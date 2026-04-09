@@ -7,7 +7,7 @@ import java.util.List;
 
 public class NextMoveCalculator {
 
-    public List<Field> calculateNextPossibleMoves(Field field) {
+    public static List<Field> calculateNextPossibleMoves(Field field) {
 
         List<Field> listNextPossibleFields = new ArrayList<>();
 
@@ -22,7 +22,7 @@ public class NextMoveCalculator {
         return listNextPossibleFields;
     }
 
-    private void addToNextPossibleFieldsIfPossibleMoveNotRepetitive(List<Field> listNextPossibleFields, Field field, int idSourceStack, int idTargetStack) {
+    private static void addToNextPossibleFieldsIfPossibleMoveNotRepetitive(List<Field> listNextPossibleFields, Field field, int idSourceStack, int idTargetStack) {
 
         if (idSourceStack == idTargetStack) {
             return;
