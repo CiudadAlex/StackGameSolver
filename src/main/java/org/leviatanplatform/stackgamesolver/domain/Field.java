@@ -66,8 +66,23 @@ public class Field {
         return listPreviousPositions.contains(currentPosition);
     }
 
+    public boolean isSolved() {
+
+        for (Stack stack : listStacks) {
+            if (!stack.isSolved()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public int getNumberOfStacks() {
         return listStacks.size();
+    }
+
+    public List<Move> getListMoves() {
+        return listMoves;
     }
 
     public String getPositionString() {
