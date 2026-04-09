@@ -7,10 +7,12 @@ public class Field {
 
     private final List<Stack> listStacks;
     private final List<String> listPreviousPositions;
+    private final List<Move> listMoves;
 
-    public Field(List<Stack> listStacks, List<String> listPreviousPositions) {
+    public Field(List<Stack> listStacks, List<String> listPreviousPositions, List<Move> listMoves) {
         this.listStacks = listStacks;
         this.listPreviousPositions = listPreviousPositions;
+        this.listMoves = listMoves;
     }
 
     public Field cloneField() {
@@ -24,7 +26,10 @@ public class Field {
         List<String> listPreviousPositionsCloned = new ArrayList<>();
         listPreviousPositionsCloned.addAll(listPreviousPositions);
 
-        return new Field(listStacksCloned, listPreviousPositionsCloned);
+        List<Move> listMovesCloned = new ArrayList<>();
+        listMovesCloned.addAll(listMoves);
+
+        return new Field(listStacksCloned, listPreviousPositionsCloned, listMovesCloned);
     }
 
     public boolean canMove(int idStackSource, int idStackTarget) {
@@ -51,6 +56,9 @@ public class Field {
         stackTarget.push(itemSource);
 
         listPreviousPositions.add(currentPosition);
+
+        Move move = new Move(idStackSource, idStackTarget);
+        listMoves.add(move);
     }
 
     public boolean isCurrentPositionAlsoInPrevious() {
