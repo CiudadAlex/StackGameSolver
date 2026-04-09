@@ -6,9 +6,11 @@ import java.util.List;
 public class Field {
 
     private final List<Stack> listStacks;
+    private final List<String> listPreviousPositions;
 
-    public Field(List<Stack> listStacks) {
+    public Field(List<Stack> listStacks, List<String> listPreviousPositions) {
         this.listStacks = listStacks;
+        this.listPreviousPositions = listPreviousPositions;
     }
 
     public Field cloneField() {
@@ -19,7 +21,10 @@ public class Field {
             listStacksCloned.add(stack.cloneStack());
         }
 
-        return new Field(listStacksCloned);
+        List<String> listPreviousPositionsCloned = new ArrayList<>();
+        listPreviousPositionsCloned.addAll(listPreviousPositions);
+
+        return new Field(listStacksCloned, listPreviousPositionsCloned);
     }
 
     public String getPositionString() {
