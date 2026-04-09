@@ -9,6 +9,12 @@ public class Field {
     private final List<String> listPreviousPositions;
     private final List<Move> listMoves;
 
+    public Field(List<Stack> listStacks) {
+        this.listStacks = listStacks;
+        this.listPreviousPositions = new ArrayList<>();
+        this.listMoves = new ArrayList<>();
+    }
+
     public Field(List<Stack> listStacks, List<String> listPreviousPositions, List<Move> listMoves) {
         this.listStacks = listStacks;
         this.listPreviousPositions = listPreviousPositions;

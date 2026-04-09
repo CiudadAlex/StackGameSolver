@@ -7,7 +7,7 @@ import java.util.List;
 
 public class FieldSolver {
 
-    public List<Move> solve(Field field) {
+    public static List<Move> solve(Field field) {
 
         List<Field> listNextFields = NextMoveCalculator.calculateNextPossibleMoves(field);
 
@@ -15,9 +15,13 @@ public class FieldSolver {
             if (nextField.isSolved()) {
                 return nextField.getListMoves();
             }
+
+            List<Move> listMoves = solve(nextField);
+            if (listMoves != null) {
+                return listMoves;
+            }
         }
 
-        // FIXME acabar
         return null;
     }
 }
