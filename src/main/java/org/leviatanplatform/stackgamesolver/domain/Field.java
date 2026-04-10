@@ -100,4 +100,14 @@ public class Field {
 
         return sb.toString();
     }
+
+    public List<List<Integer>> getProperties() {
+        List<List<Integer>> listListProperties = new ArrayList<>();
+
+        for (Stack stack : listStacks) {
+            listListProperties.add(stack.getProperties());
+        }
+
+        return listListProperties;
+    }
 }

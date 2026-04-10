@@ -117,4 +117,14 @@ public class Stack {
 
         return sb.toString();
     }
+
+    public List<Integer> getProperties() {
+        List<Integer> listProperties = new ArrayList<>();
+
+        for (Item item : listElements) {
+            listProperties.add(item.getProperty());
+        }
+
+        return listProperties;
+    }
 }
