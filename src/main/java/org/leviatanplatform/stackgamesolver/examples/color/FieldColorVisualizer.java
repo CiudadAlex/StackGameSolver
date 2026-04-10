@@ -15,6 +15,9 @@ public class FieldColorVisualizer {
 
     public static void visualize(Field field) {
 
+        System.out.println();
+        System.out.println();
+
         List<List<Integer>> listListProperties = field.getProperties();
         Iterator<List<Integer>> iteratorStacks = listListProperties.iterator();
 
@@ -23,13 +26,14 @@ public class FieldColorVisualizer {
             List<List<Integer>> listListPropertiesRow = new ArrayList<>();
 
             for (int i = 0; i < NUM_STACKS_IN_ROW; i++) {
+
                 if (iteratorStacks.hasNext()) {
                     List<Integer> stack = iteratorStacks.next();
                     listListPropertiesRow.add(stack);
                 }
-
-                printRowOfStacks(listListPropertiesRow);
             }
+
+            printRowOfStacks(listListPropertiesRow);
         }
     }
 
@@ -38,6 +42,10 @@ public class FieldColorVisualizer {
         for (int i = FieldColorExampleCreator.STACK_CAPACITY - 1; i > -1; i--) {
             printSubRowOfStacks( listListPropertiesRow, i);
         }
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
     }
 
     private static void printSubRowOfStacks(List<List<Integer>> listListPropertiesRow, int index) {
