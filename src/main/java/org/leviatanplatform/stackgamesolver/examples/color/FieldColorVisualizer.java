@@ -10,6 +10,7 @@ public class FieldColorVisualizer {
 
     private static final int NUM_STACKS_IN_ROW = 4;
     private static final String COLOR_SPACE = "    ";
+    private static final String INTER_STACK_SPACE = "      ";
 
     public static void visualize(Field field) {
 
@@ -22,7 +23,22 @@ public class FieldColorVisualizer {
     }
 
     private void printRowOfStacks(List<List<Integer>> listListPropertiesRow) {
-        // FIXME acabar
+
+        for (int i = FieldColorExampleCreator.STACK_CAPACITY - 1; i > -1; i--) {
+            printSubRowOfStacks( listListPropertiesRow, i);
+        }
+    }
+
+    private void printSubRowOfStacks(List<List<Integer>> listListPropertiesRow, int index) {
+
+        for (List<Integer> stack : listListPropertiesRow) {
+
+            System.out.print(INTER_STACK_SPACE);
+            Integer propertyColor = index <= stack.size() - 1 ? stack.get(index) : null;
+            printPropertyColor(propertyColor);
+        }
+
+        System.out.println();
     }
 
     private void printPropertyColor(Integer propertyColor) {
