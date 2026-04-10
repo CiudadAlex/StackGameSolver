@@ -3,6 +3,7 @@ package org.leviatanplatform.stackgamesolver.examples.color;
 import org.fusesource.jansi.Ansi;
 import org.leviatanplatform.stackgamesolver.domain.Field;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -17,19 +18,29 @@ public class FieldColorVisualizer {
         List<List<Integer>> listListProperties = field.getProperties();
         Iterator<List<Integer>> iteratorStacks = listListProperties.iterator();
 
-        // FIXME acabar
+        while (iteratorStacks.hasNext()) {
 
-        System.out.println(Ansi.ansi().fgRed().a("Texto rojo").reset());
+            List<List<Integer>> listListPropertiesRow = new ArrayList<>();
+
+            for (int i = 0; i < NUM_STACKS_IN_ROW; i++) {
+                if (iteratorStacks.hasNext()) {
+                    List<Integer> stack = iteratorStacks.next();
+                    listListPropertiesRow.add(stack);
+                }
+
+                printRowOfStacks(listListPropertiesRow);
+            }
+        }
     }
 
-    private void printRowOfStacks(List<List<Integer>> listListPropertiesRow) {
+    private static void printRowOfStacks(List<List<Integer>> listListPropertiesRow) {
 
         for (int i = FieldColorExampleCreator.STACK_CAPACITY - 1; i > -1; i--) {
             printSubRowOfStacks( listListPropertiesRow, i);
         }
     }
 
-    private void printSubRowOfStacks(List<List<Integer>> listListPropertiesRow, int index) {
+    private static void printSubRowOfStacks(List<List<Integer>> listListPropertiesRow, int index) {
 
         for (List<Integer> stack : listListPropertiesRow) {
 
@@ -41,7 +52,7 @@ public class FieldColorVisualizer {
         System.out.println();
     }
 
-    private void printPropertyColor(Integer propertyColor) {
+    private static void printPropertyColor(Integer propertyColor) {
 
         if (propertyColor == null) {
             System.out.print(COLOR_SPACE);
