@@ -10,7 +10,7 @@ import java.util.List;
 public class FieldColorVisualizer {
 
     private static final int NUM_STACKS_IN_ROW = 4;
-    private static final String COLOR_SPACE = "    ";
+    private static final String COLOR_SPACE = ".....";
     private static final String INTER_STACK_SPACE = "      ";
 
     public static void visualize(Field field) {
