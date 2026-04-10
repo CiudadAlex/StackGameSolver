@@ -11,7 +11,7 @@ import static org.leviatanplatform.stackgamesolver.examples.color.ColorProperty.
 
 public class FieldColorExampleCreator {
 
-    private static final int STACK_CAPACITY = 4;
+    public static final int STACK_CAPACITY = 4;
 
     public static Field create() {
 
