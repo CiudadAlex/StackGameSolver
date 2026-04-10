@@ -16,6 +16,11 @@ public class Main {
 
         FieldColorVisualizer.visualize(field);
 
+        solve(field);
+    }
+
+    private static void solve(Field field) {
+
         List<Move> listMove = FieldSolver.solve(field);
 
         if (listMove == null) {
