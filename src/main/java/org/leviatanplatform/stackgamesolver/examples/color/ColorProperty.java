@@ -3,16 +3,16 @@ package org.leviatanplatform.stackgamesolver.examples.color;
 public enum ColorProperty {
 
     PURPLE(1, 128, 0, 128),
-    PINK(2, 255, 128, 128),
-    GREEN(3, 0, 255, 0),
-    MARINE(4, 0, 0, 128),
+    PINK(2, 232, 28, 242),
+    GREEN(3, 19, 133, 6),
+    MARINE(4, 22, 5, 207),
     ORANGE(5, 255, 128, 0),
     CYAN(6, 0, 255, 255),
-    BLUE(7, 0, 0, 255),
-    CLAY(8, 139, 69, 19),
+    BLUE(7, 38, 134, 219),
+    CLAY(8, 165, 42, 42),
     YELLOW(9, 255, 255, 0),
     LIMA(10, 128, 255, 0),
-    BROWN(11, 165, 42, 42),
+    BROWN(11, 165, 127, 38),
     RED(12, 255, 0, 0);
 
 
