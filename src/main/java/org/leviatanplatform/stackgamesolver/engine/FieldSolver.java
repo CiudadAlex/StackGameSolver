@@ -29,6 +29,19 @@ public class FieldSolver {
         }
     }
 
+    private static List<Field> purgeNumberOfStacksResolved(List<Field> listFields, int minStacksResolved) {
+
+        List<Field> listFieldsPurged = new ArrayList<>();
+
+        for (Field field : listFields) {
+            if (field.getNumberStacksSolved() >= minStacksResolved) {
+                listFieldsPurged.add(field);
+            }
+        }
+
+        return listFieldsPurged;
+    }
+
     private static String getTextStatisticsStacksSolved(List<Field> listFields) {
         int numberStacks = listFields.get(0).getNumberOfStacks();
         int[] arrayNumberSolved = new int[numberStacks + 1];
