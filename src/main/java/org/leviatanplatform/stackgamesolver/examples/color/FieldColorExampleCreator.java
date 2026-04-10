@@ -13,7 +13,21 @@ public class FieldColorExampleCreator {
 
     public static final int STACK_CAPACITY = 4;
 
-    public static Field create() {
+    public static Field createEasy() {
+
+        List<Stack> listStacks = new ArrayList<>();
+
+        addStack(listStacks, RED, GREEN, BLUE, YELLOW);
+        addStack(listStacks, RED, GREEN, BLUE, YELLOW);
+        addStack(listStacks, RED, GREEN, BLUE, YELLOW);
+        addStack(listStacks, RED, GREEN, BLUE, YELLOW);
+        addStack(listStacks);
+        addStack(listStacks);
+
+        return new Field(listStacks);
+    }
+
+    public static Field createHard() {
 
         List<Stack> listStacks = new ArrayList<>();
 

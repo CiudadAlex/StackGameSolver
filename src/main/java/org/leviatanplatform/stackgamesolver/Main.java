@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Field field = FieldColorExampleCreator.create();
+        Field field = FieldColorExampleCreator.createEasy();
 
         FieldColorVisualizer.visualize(field);
 
@@ -21,7 +21,10 @@ public class Main {
 
     private static void solve(Field field) {
 
-        List<Move> listMove = FieldSolver.solve(field);
+        Field fieldSolution = FieldSolver.solve(field);
+        FieldColorVisualizer.visualize(fieldSolution);
+
+        List<Move> listMove = fieldSolution.getListMoves();
 
         if (listMove == null) {
             System.out.println("No solution found");

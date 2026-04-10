@@ -1,7 +1,6 @@
 package org.leviatanplatform.stackgamesolver.engine;
 
 import org.leviatanplatform.stackgamesolver.domain.Field;
-import org.leviatanplatform.stackgamesolver.domain.Move;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +9,7 @@ import java.util.Map;
 
 public class FieldSolver {
 
-    public static List<Move> solve(Field field) {
+    public static Field solve(Field field) {
 
         List<Field> listNextFields = List.of(field);
         int i = 0;
@@ -19,7 +18,7 @@ public class FieldSolver {
 
             for (Field nextField : listNextFields) {
                 if (nextField.isSolved()) {
-                    return nextField.getListMoves();
+                    return nextField;
                 }
             }
 
