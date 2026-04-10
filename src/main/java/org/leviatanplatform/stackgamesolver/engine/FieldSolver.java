@@ -25,11 +25,28 @@ public class FieldSolver {
             listNextFields = getNextFields(listNextFields);
 
             i++;
-            System.out.println(i + " >> " + listNextFields.size());
+            System.out.println(i + " >> " + listNextFields.size() + " >> " + getTextStatisticsStacksSolved(listNextFields));
         }
     }
 
-    public static List<Field> getNextFields(List<Field> listFields) {
+    private static String getTextStatisticsStacksSolved(List<Field> listFields) {
+        int numberStacks = listFields.get(0).getNumberOfStacks();
+        int[] arrayNumberSolved = new int[numberStacks + 1];
+
+        for (Field field : listFields) {
+            arrayNumberSolved[field.getNumberStacksSolved()]++;
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < arrayNumberSolved.length; i++) {
+            sb.append(i).append(" (").append(arrayNumberSolved[i]).append(") | ");
+        }
+
+        return sb.toString();
+    }
+
+    private static List<Field> getNextFields(List<Field> listFields) {
 
         Map<String, Field> listAllNextFields = new HashMap<>();
 

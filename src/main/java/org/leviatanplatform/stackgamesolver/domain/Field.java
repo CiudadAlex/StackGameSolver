@@ -83,6 +83,19 @@ public class Field {
         return true;
     }
 
+    public int getNumberStacksSolved() {
+
+        int numStacksSolved = 0;
+
+        for (Stack stack : listStacks) {
+            if (stack.isSolved()) {
+                numStacksSolved++;
+            }
+        }
+
+        return numStacksSolved;
+    }
+
     public int getNumberOfStacks() {
         return listStacks.size();
     }
