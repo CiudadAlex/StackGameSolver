@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.leviatanplatform.stackgamesolver.examples.color.ColorProperty.*;
 
-public class FieldExampleCreator {
+public class FieldColorExampleCreator {
 
     private static final int STACK_CAPACITY = 4;
 

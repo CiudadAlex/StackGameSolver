@@ -31,4 +31,26 @@ public enum ColorProperty {
     public int getProperty() {
         return property;
     }
+
+    public int getR() {
+        return r;
+    }
+
+    public int getG() {
+        return g;
+    }
+
+    public int getB() {
+        return b;
+    }
+
+    public static ColorProperty getByProperty(int property) {
+
+        for (ColorProperty colorProperty : values()) {
+            if (property == colorProperty.getProperty()) {
+                return colorProperty;
+            }
+        }
+        return null;
+    }
 }
