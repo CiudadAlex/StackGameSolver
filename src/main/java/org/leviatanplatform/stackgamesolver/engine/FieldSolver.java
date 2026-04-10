@@ -13,6 +13,7 @@ public class FieldSolver {
     public static List<Move> solve(Field field) {
 
         List<Field> listNextFields = List.of(field);
+        int i = 0;
 
         while (true) {
 
@@ -24,7 +25,8 @@ public class FieldSolver {
 
             listNextFields = getNextFields(listNextFields);
 
-            System.out.print(".");
+            i++;
+            System.out.println(i + " >> " + listNextFields.size());
         }
     }
 
