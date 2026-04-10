@@ -27,6 +27,24 @@ public class FieldColorExampleCreator {
         return new Field(listStacks);
     }
 
+    public static Field createMedium() {
+
+        List<Stack> listStacks = new ArrayList<>();
+
+        addStack(listStacks, RED, GREEN, BLUE, YELLOW);
+        addStack(listStacks, RED, GREEN, BLUE, YELLOW);
+        addStack(listStacks, RED, GREEN, BLUE, YELLOW);
+        addStack(listStacks, RED, GREEN, BLUE, YELLOW);
+        addStack(listStacks, ORANGE, MARINE, PINK, CYAN);
+        addStack(listStacks, ORANGE, MARINE, PINK, CYAN);
+        addStack(listStacks, ORANGE, MARINE, PINK, CYAN);
+        addStack(listStacks, ORANGE, MARINE, PINK, CYAN);
+        addStack(listStacks);
+        addStack(listStacks);
+
+        return new Field(listStacks);
+    }
+
     public static Field createHard() {
 
         List<Stack> listStacks = new ArrayList<>();
