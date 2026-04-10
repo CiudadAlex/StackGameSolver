@@ -10,6 +10,14 @@ public class Move {
         this.idStackTarget = idStackTarget;
     }
 
+    public int getIdStackSource() {
+        return idStackSource;
+    }
+
+    public int getIdStackTarget() {
+        return idStackTarget;
+    }
+
     public String toString() {
         return "(" + idStackSource + "," + idStackTarget + ")";
     }
