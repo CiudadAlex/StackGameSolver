@@ -9,6 +9,7 @@ import java.util.List;
 public class FieldColorVisualizer {
 
     private static final int NUM_STACKS_IN_ROW = 4;
+    private static final String COLOR_SPACE = "    ";
 
     public static void visualize(Field field) {
 
@@ -25,10 +26,16 @@ public class FieldColorVisualizer {
     }
 
     private void printPropertyColor(Integer propertyColor) {
+
+        if (propertyColor == null) {
+            System.out.print(COLOR_SPACE);
+            return;
+        }
+
         ColorProperty colorProperty = ColorProperty.getByProperty(propertyColor);
         int r = colorProperty.getR();
         int g = colorProperty.getG();
         int b = colorProperty.getB();
-        System.out.print(Ansi.ansi().bgRgb(r, g, b).a("    ").reset());
+        System.out.print(Ansi.ansi().bgRgb(r, g, b).a(COLOR_SPACE).reset());
     }
 }
