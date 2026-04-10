@@ -40,7 +40,7 @@ public class Stack {
 
     public boolean canPop() {
 
-        if (isEmpty()) {
+        if (isEmpty() || isSolved()) {
             return false;
         }
 
