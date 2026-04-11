@@ -23,10 +23,30 @@ public class FieldSolver {
             }
 
             listNextFields = getNextFields(listNextFields);
+            listNextFields = purge(listNextFields);
 
             i++;
             System.out.println(i + " >> " + listNextFields.size() + " >> " + getTextStatisticsStacksSolved(listNextFields));
         }
+    }
+
+    private static List<Field> purge(List<Field> listFields) {
+
+        int[] arrayNumberSolved = getStatisticsStacksSolved(listFields);
+        int minStacksResolved = getHighestIndexGreaterThanGiven(arrayNumberSolved, 100) - 3;
+
+        return purgeNumberOfStacksResolved(listFields, minStacksResolved);
+    }
+
+    private static int getHighestIndexGreaterThanGiven(int[] arrayNumberSolved, int numberMin) {
+
+        for (int i = arrayNumberSolved.length - 1; i > -1; i--) {
+            if (arrayNumberSolved[i] >= numberMin) {
+                return i;
+            }
+        }
+
+        return 0;
     }
 
     private static List<Field> purgeNumberOfStacksResolved(List<Field> listFields, int minStacksResolved) {
@@ -42,13 +62,20 @@ public class FieldSolver {
         return listFieldsPurged;
     }
 
-    private static String getTextStatisticsStacksSolved(List<Field> listFields) {
+    private static int[] getStatisticsStacksSolved(List<Field> listFields) {
         int numberStacks = listFields.get(0).getNumberOfStacks();
         int[] arrayNumberSolved = new int[numberStacks + 1];
 
         for (Field field : listFields) {
             arrayNumberSolved[field.getNumberStacksSolved()]++;
         }
+
+        return arrayNumberSolved;
+    }
+
+    private static String getTextStatisticsStacksSolved(List<Field> listFields) {
+
+        int[] arrayNumberSolved = getStatisticsStacksSolved(listFields);
 
         StringBuilder sb = new StringBuilder();
 
