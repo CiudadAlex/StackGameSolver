@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Field field = FieldColorExampleCreator.createMedium();
+        Field field = FieldColorExampleCreator.createHard();
 
         FieldColorVisualizer.visualize(field);
 
