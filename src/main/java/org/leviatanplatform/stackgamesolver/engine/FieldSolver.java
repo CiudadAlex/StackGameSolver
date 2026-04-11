@@ -33,7 +33,7 @@ public class FieldSolver {
     private static List<Field> purge(List<Field> listFields) {
 
         int[] arrayNumberSolved = getStatisticsStacksSolved(listFields);
-        int minStacksResolved = getHighestIndexGreaterThanGiven(arrayNumberSolved, 100) - 3;
+        int minStacksResolved = getHighestIndexGreaterThanGiven(arrayNumberSolved, 100) - 1;
 
         return purgeNumberOfStacksResolved(listFields, minStacksResolved);
     }

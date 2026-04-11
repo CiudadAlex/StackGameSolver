@@ -88,7 +88,7 @@ public class Field {
         int numStacksSolved = 0;
 
         for (Stack stack : listStacks) {
-            if (stack.isSolved()) {
+            if (stack.isSolved() && stack.isFull()) {
                 numStacksSolved++;
             }
         }
